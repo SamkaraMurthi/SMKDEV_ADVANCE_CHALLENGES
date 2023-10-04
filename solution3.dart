@@ -11,21 +11,28 @@ import 'dart:math';
  */
 
 void main() {
-  int? given_numbers; //variable for user input
+  //given number variable
+  int? given_numbers;
 
   //below is the line that looping the program when user input the incorrect input
   do {
+    //Text Display For the User
     print("Please Input The Number");
+    //variable input for user input
     String? input = stdin.readLineSync();
+    //Convert or parse String Input to Integer and input ?? '' to check if the input is null
     given_numbers = int.tryParse(input ?? '');
-
+    //if check validation
     if (given_numbers == null || given_numbers <= 0) {
       print("Please Input a valid number greater than 0.");
     }
-  } while (given_numbers == null || given_numbers <= 0); //condition check
+    //condition check, if the user do not meet the condition, program rerun ask user input
+  } while (given_numbers == null || given_numbers <= 0);
 
+  //the input meet the condition, uuser input continue to this section, finding the user input cube
   for (int i = 1; i <= given_numbers; i++) {
-    print("Current Number is : $i and the Cube is ${pow(i, 3)}");
+    print(
+        "Current Number is : $i and the Cube is ${pow(i, 3)}"); //printing the result
   }
 }
 
